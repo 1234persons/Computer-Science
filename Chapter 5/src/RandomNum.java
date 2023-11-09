@@ -15,7 +15,7 @@ public class RandomNum {
 		minimum = input.nextInt();
 		System.out.println("Enter the maximum: ");
 		maximum = input.nextInt();
-		
+		input.close();
 		random = (maximum - minimum) * Math.random() + minimum;
 		
 		System.out.print("The random number is: " + (int)random);

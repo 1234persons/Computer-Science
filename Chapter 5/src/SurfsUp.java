@@ -9,7 +9,7 @@ public class SurfsUp {
 		double waves;
 		System.out.print("Enter the wave height: ");
 		waves = input.nextDouble();
-		
+		input.close();
 		
 		if (waves >= 6) {
 		System.out.print("Great day for surfing!");

@@ -1,6 +1,6 @@
 import java.text.NumberFormat;
 import java.util.Scanner;
-import java.util.Scanner;
+
 import java.lang.Math;
 public class CompundInterest {
 
@@ -24,7 +24,7 @@ public class CompundInterest {
 		
 		System.out.println("Enter the years that the money has been invested: (t)");
 		time = input.nextDouble();
-		
+		input.close();
 		principal = future/Math.pow((1+rate/number), (number*time));
 
 		System.out.print("The principal investment amount is: " + money.format(principal));

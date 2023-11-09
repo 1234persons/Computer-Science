@@ -23,7 +23,7 @@ public class Hurricane {
 		
 		
 		}
-		
+		input.close();
 		
 	}
 

@@ -23,7 +23,7 @@ public class CompoundInterestPartB {
 		
 		System.out.println("Enter the principal investment amount: (p)");
 		principal = input.nextDouble();
-	
+		input.close();
 		time = (Math.log10(future/principal))/(numbers*(Math.log10(1+rate/numbers)));
 	
 		System.out.print("The principal investment amount is: " + number.format(time) + " years");

@@ -29,7 +29,7 @@ public class Election {
 		awbryCt = input.nextInt();
 		System.out.print("Enter the election results for Martinez in Connecticut: ");
 		martinezCt = input.nextInt();
-		
+		input.close();
 		totalAwbry = awbryNy + awbryNj + awbryCt;
 		totalMartinez = martinezNy + martinezNj + martinezCt;
 		

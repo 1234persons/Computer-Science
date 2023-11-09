@@ -28,7 +28,7 @@ public class GuessingGame {
         	 System.out.print("You Win");
          }
      }
-      
+     input.close();
 
         
 	}

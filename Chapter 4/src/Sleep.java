@@ -25,6 +25,7 @@ public class Sleep {
 		currentMonth = input.nextInt();
 		System.out.println("Enter the current day: ");
 		currentDay  = input.nextInt();
+		input.close();
 		aliveDays = (currentYear - birthYear)*365 + (currentMonth - birthMonth)* 30 + (currentDay - birthDay);
 		System.out.print("You've been alive for " + number.format(aliveDays) + " days\n");
 		sleepTime = aliveDays * 8;

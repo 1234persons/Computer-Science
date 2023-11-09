@@ -31,7 +31,7 @@ public class Eggs {
 			price = (eggsDoz * 0.35) + (eggsExtra * 0.35/12);
 			System.out.println("The price is: " + money.format(price));
 		}
-		
+		input.close();
 		
 		
 		//System.out.print(eggsNum+ "words" + eggsDoz+ "words" + eggsExtra);

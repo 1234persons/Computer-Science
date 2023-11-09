@@ -27,7 +27,7 @@ public class collegeCalculator {
 
 		System.out.print("Enter the cost of grants: \n");
 		grants = input.nextDouble();
-		
+		input.close();
 		totalCost = rent + tuition + books - scholarships - grants;
 		
 		System.out.print("The total cost of college will be: " + money.format(totalCost));

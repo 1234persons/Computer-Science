@@ -1,4 +1,4 @@
-import java.text.NumberFormat;
+
 import java.util.Scanner;
 
 
@@ -44,7 +44,7 @@ public class MathTutor {
 		} else {
 			System.out.print("Incorrect");
 		}
-
+		input.close();
 	}
 
 }

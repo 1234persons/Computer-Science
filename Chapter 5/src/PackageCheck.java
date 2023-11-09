@@ -22,7 +22,7 @@ public class PackageCheck {
 		weight = input.nextDouble();
 		
 		size = length * width * height;
-		
+		input.close();
 		if (size > 100000 && weight > 27 ) {
 			System.out.println("Too large and heavy");
 		} else if (size > 100000 && weight < 27) {

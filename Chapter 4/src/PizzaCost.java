@@ -15,7 +15,7 @@ public class PizzaCost {
 		diameter = input.nextDouble();
 		cost = (0.05 * (diameter * diameter)) + RENT + LABOR;
 		System.out.print("The pizza cost is: " + money.format(cost));
-	
+		input.close();
 	
 	
 	
