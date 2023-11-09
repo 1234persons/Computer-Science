@@ -1,4 +1,4 @@
-package RollingDice;
+
 import java.text.NumberFormat;
 
 public class RollingDice {
