@@ -24,16 +24,19 @@ public class ElapsedTimeCalculator {
         input.close();
 
         endingTime = startingTime + elapsedTime;
-        userDay = userDay.toLowerCase();
 
-        if (endingTime <= 12) {
+        if (endingTime < 12) {
             
             System.out.println(endingTime + ":00 " + userDay);
 
-        } else if (endingTime > 12) {
+        } else if (endingTime >= 12) {
           
-            endingTime = endingTime%12;
-           
+            endingTime = endingTime%12 ;
+            
+            if (endingTime == 0) { 
+                endingTime = 12;
+            } 
+
             if (userDay.compareToIgnoreCase(MORNING) == 0) { 
                 userDay = NIGHT;
             } else if (userDay.compareToIgnoreCase(NIGHT) == 0) {
