@@ -39,7 +39,7 @@ public class DisplayBox {
         }
     }
 
-    public static void DrawBox(int width, int length) {
+    public static void drawBox(int width, int length) {
         Scanner input = new Scanner(System.in);
         String userChoice;
         String userUnit;
@@ -72,7 +72,7 @@ public class DisplayBox {
         System.out.println("Enter the length of the box: ");
         userLength = input.nextInt();
 
-        DrawBox(userWidth, userLength); 
-        input.close();       
+        drawBox(userWidth, userLength); 
+                input.close();       
     }
 }

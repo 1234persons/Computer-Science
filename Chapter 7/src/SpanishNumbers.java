@@ -1,5 +1,5 @@
 public class SpanishNumbers {
-    public static void SpanishCounting(int i) {
+    public static void spanishCounting(int i) {
             switch (i) {
                 case 1: System.out.println("Uno - 1"); break;
                 case 2: System.out.println("Dos - 2"); break;
@@ -17,7 +17,7 @@ public class SpanishNumbers {
     public static void main(String[] args) {
         
         for (int j = 1; j <= 10; j++) {
-            SpanishCounting(j);
+            spanishCounting(j);
 
 
         }

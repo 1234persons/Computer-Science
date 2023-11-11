@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class TimeConverter {
     int hours;
     int minutes;
-    public static void HoursToMinutes() {
+    public static void hoursToMinutes() {
        Scanner input = new Scanner(System.in);
         int hours;
         int minutes;
@@ -15,7 +15,7 @@ public class TimeConverter {
         System.out.println(hours + " hours is " + minutes + " minutes");
     }
     
-    public static void MinutesToHours() {
+    public static void minutesToHours() {
         Scanner input = new Scanner(System.in);
         int minutes;
         int hours;
@@ -27,7 +27,7 @@ public class TimeConverter {
         System.out.println(minutes + " minutes is " + hours + " hours");
     }
 
-    public static void DaysToHours() {
+    public static void daysToHours() {
         Scanner input = new Scanner(System.in);
         int days;
         int hours;
@@ -39,7 +39,7 @@ public class TimeConverter {
         System.out.println(days + " days is " + hours + " hours");
     }
 
-    public static void HoursToDays() {
+    public static void hoursToDays() {
         Scanner input = new Scanner(System.in);
         int days;
         int hours;
@@ -62,13 +62,13 @@ public class TimeConverter {
         userChoice = input.nextInt();
         
         if (userChoice == 1) {
-            HoursToMinutes();
+            hoursToMinutes();
         } else if (userChoice == 2) {
-            MinutesToHours();
+            minutesToHours();
         } else if (userChoice == 3) {
-            DaysToHours();
+            daysToHours();
         } else if (userChoice == 4) {
-            HoursToDays();
+            hoursToDays();
         }
         input.close();
     }
