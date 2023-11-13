@@ -17,10 +17,10 @@ public class IsoTriangle {
         int unitNum = 1;
         String unit = "*";
 
-        for (int i = 1; i <= lineNum; i ++) {
-            addSpaces(lineNum, i);
-            for (int j = 1; j <= unitNum; j++) {
-                System.out.print(unit);
+        for (int i = 1; i <= lineNum; i ++) { //determines how many stars
+            addSpaces(lineNum, i); 
+            for (int j = 1; j <= unitNum; j++) { //prints the stars
+                System.out.print(unit); 
             }
             unitNum += 2;
             System.out.println();
