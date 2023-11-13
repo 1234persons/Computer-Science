@@ -43,6 +43,7 @@ public class IsoTriangle {
                     }
                 } else {
                     System.out.print(unit);
+                    
                 }
                 
         }
