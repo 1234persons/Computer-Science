@@ -12,7 +12,13 @@ public class PythagoreanTriples {
                 for (int b = 1; b <= 100; b++) {
                     perfectSquareB = perfectSquare(b, perfectSquareB);
                     if (perfectSquareB == true) {
-                        
+                        a = Math.pow(a);
+                        b = Math.pow(b);
+                        c = a + b;
+                        perfectSquareC = perfectSquare(c, perfectSquareC);
+                        if (perfectSquareC == true) {
+                            System.out.println(a + ", " + b + ", " + c);
+                        }
                     } else {
                         break;
                     }
