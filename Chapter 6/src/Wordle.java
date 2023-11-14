@@ -32,12 +32,17 @@ public class Wordle {
                 
                 for (int j = 0; j < secretWord.length(); j++) {
                     Character secretChar = secretWord.charAt(j);
-
-                    if (userChar.equals(secretChar) == true) {
+                    
+                    if (userChar.equals(secretChar) == true && i != j) {
+                        System.out.print(YELLOW + userChar + RESET);
+                    } else if (userChar.equals(secretChar) == true && userWord.indexOf(i) == secretWord.indexOf(j)) {
                         System.out.print(GREEN + userChar + RESET);
+                    } else if (secretWord.contains(secretCharacter) == false) {
+                        System.out.print(RED + userChar + RESET);
                     }
+                    
                 }
-                
+                //System.out.println();
             }
             
             if (userWord.equals(secretWord)) {
