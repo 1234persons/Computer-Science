@@ -25,7 +25,7 @@ public class Monogram {
         lastName = input.next();
         thirdInitial = lastName.substring(0, 1);
         thirdInitial = thirdInitial.toUpperCase();
-
+        input.close();
         System.out.println(firstInitial+thirdInitial+secondInitial);
 
 

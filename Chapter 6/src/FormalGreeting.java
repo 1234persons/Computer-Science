@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.String;
+import java.lang.String;
 
 public class FormalGreeting {
     public static void main(String[] args) {
