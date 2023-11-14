@@ -17,7 +17,7 @@ public class PercentPassing {
            
             System.out.println("Enter a score: (-1 to quit)");
             userNum = input.nextInt();
-           
+           input.close();
             
             if (userNum > 70) {
                 goodScores += 1;

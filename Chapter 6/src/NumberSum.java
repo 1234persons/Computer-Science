@@ -9,7 +9,7 @@ public class NumberSum {
 
         System.out.println("Enter a number: ");
         userNum = input.nextInt();
-
+        input.close();
         while (num != userNum) {
             num += 1;
             System.out.println(num);
