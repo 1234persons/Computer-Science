@@ -3,13 +3,12 @@ import java.util.Scanner;
 import java.lang.String;
 import java.util.ArrayList;
 
-public class WordleCopy {
+public class WorkingWordle {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Random rand = new Random();
         String userWord;
-        String wordList[] = { "BRAIN", "LOSER", "JUNKS", "FUZED", "JOCKS", "COBRA", "QUAKE", "JUICY", "JOKED", "ZESTY",
-                "ADIEU", "STARE", };
+        String wordList[] = { "BRAIN", "LOSER", "JUNKS", "FUZED", "JOCKS", "COBRA", "QUAKE", "JUICY", "JOKED", "ZESTY", "ADIEU", "STARE", };
         String secretWord = "BRAIN";
         String tempWord = secretWord;
         String RESET = "\u001B[0m";
@@ -45,10 +44,8 @@ public class WordleCopy {
                 }
 
                 }
-
+                System.out.println();
             }
-
+        input.close();
     }
 }
-
-    
