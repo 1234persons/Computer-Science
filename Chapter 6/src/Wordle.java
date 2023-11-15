@@ -42,12 +42,12 @@ public class Wordle {
                         System.out.print(GREEN + userChar + RESET);
                         userWord = userWord.replace(userChar, replacementChar);
                         break;
-                    } else if (userChar.equals(secretChar) == false) {
+                    }
+                    if (userChar.equals(secretChar) == false) {
                         System.out.print(RED + userChar + RESET);
                         userWord = userWord.replace(userChar, replacementChar);
-                        break;
+                        
                     }
-                    
                 }
                 
             }
