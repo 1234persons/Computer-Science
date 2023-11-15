@@ -15,6 +15,7 @@ public class Wordle {
         String RED = "\u001B[31m";
         String GREEN = "\u001B[32m";
         String YELLOW = "\u001B[33m";
+        String tempWord = secretWord;
         int guesses = 1;
         boolean correct;
         
@@ -32,19 +33,25 @@ public class Wordle {
                 
                 for (int j = 0; j < secretWord.length(); j++) {
                     Character secretChar = secretWord.charAt(j);
-                    
+                    Character replacementChar = 0;
                     if (userChar.equals(secretChar) == true && i != j) {
                         System.out.print(YELLOW + userChar + RESET);
-                    } else if (userChar.equals(secretChar) == true && userWord.indexOf(i) == secretWord.indexOf(j)) {
+                        userWord = userWord.replace(userChar, replacementChar);
+                        break;
+                    } else if (userChar.equals(secretChar) == true) {
                         System.out.print(GREEN + userChar + RESET);
-                    } else if (secretWord.contains(secretCharacter) == false) {
+                        userWord = userWord.replace(userChar, replacementChar);
+                        break;
+                    } else if (userChar.equals(secretChar) == false) {
                         System.out.print(RED + userChar + RESET);
+                        userWord = userWord.replace(userChar, replacementChar);
+                        break;
                     }
                     
                 }
-                //System.out.println();
+                
             }
-            
+            System.out.println();
             if (userWord.equals(secretWord)) {
                 System.out.println("You win");
                 break;
