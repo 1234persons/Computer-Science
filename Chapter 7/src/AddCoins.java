@@ -22,6 +22,7 @@ public class AddCoins {
         pennies = input.nextDouble();
 
         getDollarAmount(quarters, dimes, nickels, pennies);
+        input.close();
     }
     public static void getDollarAmount(double quarters, double dimes, double nickels, double pennies) {
         NumberFormat money = NumberFormat.getCurrencyInstance();

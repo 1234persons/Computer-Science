@@ -4,14 +4,13 @@ public class PythagoreanTriples {
     public static void main(String[] args) {
         double c;
         for (double a = 1; a <= 100; a++) {
-           double tempA = a;
-            a = perfectSquare(a);
-            if (a == tempA) {
-                for (double b = 1; b <= 100; b++) {
-                    double tempB = b;
-                    b = perfectSquare(b);
-                    
-                    if (b == tempB) {
+            perfectSquareA = perfectSquare(a, perfectSquareA);
+            if (perfectSquareA == true) {
+                for (int b = 1; b <= 100; b++) {
+                    perfectSquareB = perfectSquare(b, perfectSquareB);
+                    if (perfectSquareB == true) {
+                        a = Math.pow(a);
+                        b = Math.pow(b);
                         c = a + b;
                         double tempC = c;
                         
