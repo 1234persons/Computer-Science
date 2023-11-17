@@ -17,7 +17,7 @@ public class GuessingGame {
     	 System.out.println("Enter a number between 1 and 20: ");
          userNum = input.nextInt();
          
-      //   System.out.println((int)randomNum);
+       //  System.out.println((int)randomNum);
        //  System.out.println((int)userNum);
          
          if (userNum > randomNum) {
