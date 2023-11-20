@@ -1,6 +1,5 @@
-import java.util.Scanner;
-import java.lang.Math;
 import java.text.NumberFormat;
+import java.util.Scanner;
 public class AddCoins {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
