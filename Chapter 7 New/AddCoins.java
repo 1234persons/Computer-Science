@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.text.NumberFormat;
 
-public class WorkingAddCoins {
+public class AddCoins {
     
     public static void main(String[] args) {
         

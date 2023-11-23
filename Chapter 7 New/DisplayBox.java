@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class WorkingDisplayBox {
+public class DisplayBox {
     public static void drawBar(int width, int length) {
         String side = "*";
 
