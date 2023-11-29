@@ -26,3 +26,4 @@ public class Exponentiation {
         System.out.println(product);
     }
 }
+

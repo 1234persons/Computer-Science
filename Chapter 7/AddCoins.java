@@ -1,8 +1,12 @@
-import java.text.NumberFormat;
 import java.util.Scanner;
+import java.text.NumberFormat;
+
 public class AddCoins {
+    
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        
+    
+    Scanner input = new Scanner(System.in);
 
         double quarters;
         double dimes;
@@ -39,3 +43,4 @@ public class AddCoins {
 
     }
 }
+
