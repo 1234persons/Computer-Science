@@ -15,12 +15,13 @@ public class MathTutor {
 		double secondRandom;
 		double operatorRandom;
 	
-		operatorRandom = (5-1) * Math.random() + 1;
+		//operatorRandom = (5-1) * Math.random() + 1;
+		operatorRandom = 4;
 		firstRandom = (10-1) * Math.random() + 1;
 		secondRandom = (10-1) * Math.random() + 1;
 	
-		firstNum = firstRandom;
-		secondNum = secondRandom;
+		firstNum = (int)firstRandom;
+		secondNum = (int)secondRandom;
 		operatorRandom = (int)operatorRandom;
 		
 		if (operatorRandom == 1) { 
