@@ -17,16 +17,15 @@ public class PercentPassing {
            
             System.out.println("Enter a score: (-1 to quit)");
             userNum = input.nextInt();
-           input.close();
             
-            if (userNum > 70) {
+            if (userNum >= 70) {
                 goodScores += 1;
                 totalScores += 1;
             } else {
                 totalScores += 1;
             }
         }
-
+        input.close();
         scoresPercent = goodScores/(totalScores - 1);
 
         System.out.println("The percent of scores above 70% is: " + percent.format(scoresPercent));
