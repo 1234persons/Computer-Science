@@ -9,10 +9,9 @@ public class AccountSetup {
         String username = " ";
         String password = " ";
 
-        while (username.length() < 8) {
-            System.out.println("Enter a username that is at least eight characters: ");
+
+        System.out.println("Enter a username: ");
         username = input.nextLine();
-        }
 
         while (password.length() < 8) {
              System.out.println("Enter a password that is at least eight characters: ");

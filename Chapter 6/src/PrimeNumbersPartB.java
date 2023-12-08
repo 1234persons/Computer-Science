@@ -21,18 +21,13 @@ public class PrimeNumbersPartB {
         }
 
         for (int j = userMin; j <= userMax; j++) {
-          
-            prime = false;
-          
-           for (int i = 2; i < j; i++) {
-            
-            if (j%i == 0 ) {
-                prime = true;
+            prime = true;
+            for (int i = 2; i < j; i++) {
+                if (j%i == 0 ) {
+                    prime = false;
+                }
             }
-            
-        }
-       
-        if (!prime) {
+        if (prime) {
                 System.out.println(j);
             }
         }
