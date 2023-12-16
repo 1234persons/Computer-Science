@@ -67,7 +67,7 @@ public class DisplayBox {
 
         System.out.println("Enter the width of the box: ");
         userWidth = input.nextInt();
-
+        
 
         System.out.println("Enter the length of the box: ");
         userLength = input.nextInt();
