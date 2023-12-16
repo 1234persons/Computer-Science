@@ -16,20 +16,24 @@ public class CarRecall {
 			input.close();
 	        switch (modelNumber) {
 	            case 119:
-	                defective = true;
 	            case 179:
-	                defective = true;
+				case 189:
+				case 190:
+				case 191:
+				case 192:
+				case 193:
+				case 194:
+				case 195:
+				case 196:
 	            case 221:
-	                defective = true;
 	            case 780:
 	                defective = true;
+					break;
+				
 	        }
 
-	        if (modelNumber >= 189 && modelNumber <= 196) {
-	            defective = true;
-	        }
 
-	        if (defective == true) {
+	        if (defective) {
 	            System.out.println("Your car has been recalled.");
 	        } else {
 	            System.out.println("No recalls for this vehicle.");

@@ -25,9 +25,9 @@ public class PackageCheck {
 		input.close();
 		if (size > 100000 && weight > 27 ) {
 			System.out.println("Too large and heavy");
-		} else if (size > 100000 && weight < 27) {
+		} else if (size > 100000) {
 			System.out.print("Too large");
-		} else if (weight > 27 && size < 100000) {
+		} else if (weight > 27) {
 			System.out.print("Too heavy");
 		} else {
 			System.out.print("Accept");

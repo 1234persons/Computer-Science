@@ -5,18 +5,19 @@ public class FormalGreeting {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String userName;
-        String greeting;
+        String name;
 
         System.out.println("Enter your name including title: ");
         userName = input.nextLine();
+        name = userName;
         input.close();
-
-        if (userName.startsWith("Mr. ")) {
-            greeting = "Hello sir";
-            System.out.println(greeting);
-        } else if (userName.startsWith("Miss") || userName.startsWith("Mrs. ") || userName.startsWith("Ms. ")) { 
-            greeting = "Hello ma'am";
-            System.out.println(greeting);
+        userName = userName.toLowerCase();
+        if (userName.startsWith("mr. ")) {
+            System.out.println("Hello sir");
+        } else if (userName.startsWith("miss") || userName.startsWith("mrs. ") || userName.startsWith("ms. ")) { 
+            System.out.println("Hello ma'am");
+        } else {
+            System.out.println("Hello, " + name);
         }
 
     }
