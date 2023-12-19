@@ -1,54 +1,118 @@
 import java.util.Random;
 import java.util.Scanner;
-import java.lang.String;
-import java.util.ArrayList;
+
+
 
 public class Wordle {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Random rand = new Random();
-        String userWord;
+        
+        //Chooses secret word
         String wordList[] = { "BRAIN", "LOSER", "JUNKS", "FUZED", "JOCKS", "COBRA", "QUAKE", "JUICY", "JOKED", "ZESTY",
                 "ADIEU", "STARE", };
-        String secretWord = "BRAIN";
-        String tempWord = secretWord;
+
+        String secretWord = wordList[rand.nextInt(wordList.length)];
+        String userWord;
+        String tempUserWord = "";
+        String tempSecretWord = secretWord;
+        String correct = secretWord;
+
         String RESET = "\u001B[0m";
         String RED = "\u001B[31m";
         String GREEN = "\u001B[32m";
         String YELLOW = "\u001B[33m";
-        String correct = secretWord;
 
-        System.out.println("You will have five attempts to guess a random five letter worc.");
+        int guesses = 1;
+
+        System.out.println("You will have five attempts to guess a random five letter word.");
         System.out.println("Letters in the correct spot will be " + GREEN + "green" + RESET);
         System.out.println("Letters in the word but not the right spot will be " + YELLOW + "yellow" + RESET);
         System.out.println("Letters that are not in the word will be " + RED + "red\n" + RESET);
+        //System.out.println("The secret word is " + secretWord);
 
-        for (int round = 0; round < 6; round++) {
-            System.out.print("Enter a guess: ");
-            userWord = input.nextLine().toUpperCase();
-            tempWord = userWord;
+        // loops guesses 5 times
+        do {
+            
+            // Makes user enter five letter word
+            do {
+                
+                System.out.println("Enter a five letter word: ");
+                userWord = input.next().toUpperCase();
+                tempUserWord = "";
 
-            // Create a loop to iterate through each
-            ArrayList<String> usedChars = new ArrayList<String>();
-            for (int i = 0; i < 5; i++) {
-                if (tempWord.equals(correct)) {
-                    System.out.println("You Win!");
-                    break;
-                } else if (userWord.substring(i, i + 1).equals(correct.substring(i, i + 1))) {
-                    // Letter matches
-                    System.out.print(GREEN + userWord.substring(i, i + 1) + RESET);
-                    usedChars.add(userWord.substring(i, i + 1));
-                }else if (usedChars.contains(userWord.substring(i, i + 1))){
-                    System.out.print(RED + userWord.substring(i, i + 1)+ RESET);
-                }else{
-                    System.out.print(YELLOW + userWord.substring(i, i + 1) + RESET);
-                }
+            } while (userWord.length() != 5);
 
-                }
-
+            // Checks if guess is correct
+            if (userWord.equals(correct)) {
+                System.out.println("You win!");
+                break;
             }
 
+            char userChar;
+            char secretChar;
+            
+            //iterates through users word
+            for (int userIndex = 0; userIndex < secretWord.length(); userIndex++) {
+
+                userChar = userWord.charAt(userIndex);
+                tempSecretWord = secretWord;
+                
+                //Letter not in word
+                for (int secretIndex = 0; secretIndex < secretWord.length(); secretIndex++) {
+                    secretChar = tempSecretWord.charAt(secretIndex);
+
+                    if (userChar == '-' || userChar == '`') {
+                        break;
+                    }
+                    if (tempSecretWord.contains(String.valueOf(userChar)) == false) {
+                        tempUserWord += RED + userChar + RESET;
+                        break;
+                    }
+                }
+                
+                //Letter in word and right place
+                for (int secretIndex = 0; secretIndex < secretWord.length(); secretIndex++) {
+                    
+                    secretChar = tempSecretWord.charAt(secretIndex);
+                    if (userChar == '-' || userChar == '`') {
+                        break;
+                    }
+                    if (userChar == secretChar && userIndex == secretIndex) {
+                        tempUserWord += GREEN + userChar + RESET;
+                        tempSecretWord = tempSecretWord.replace(userChar, '`');
+                        
+                    }
+                }
+                
+                
+                //Letter in word and in wrong place
+                for (int secretIndex = 0; secretIndex < secretWord.length(); secretIndex++) {
+                    secretChar = tempSecretWord.charAt(secretIndex);
+                    if (userChar == '-' || userChar == '`') {
+                        break;
+                    }
+                    
+                    if (tempSecretWord.contains(String.valueOf(userChar)) && secretIndex != userIndex) {                      
+                        tempUserWord += YELLOW + userChar + RESET;
+                        tempSecretWord = tempSecretWord.replace(userChar, '-');
+                        //tempUserWord = tempUserWord.replace(userChar, '-');
+                        //userChar = '-';
+                        break;
+                    }
+                    
+                }
+
+                
+
+                
+            }
+            
+            //System.out.println(tempSecretWord);
+            System.out.println(tempUserWord);
+
+        } while (guesses <= 5);
+        input.close();
     }
 }
 
-    
