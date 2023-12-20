@@ -13,18 +13,17 @@ public class Monogram {
 
         System.out.println("Enter your first name: ");
         firstName = input.next();
-        firstInitial = firstName.substring(0, 1);
+        firstInitial = firstName.substring(0, 1).toLowerCase();
         firstInitial = firstInitial.toLowerCase();
 
         System.out.println("Enter your second name: ");
         middleName = input.next();
-        secondInitial = middleName.substring(0, 1);
-        secondInitial = secondInitial.toLowerCase();
+        secondInitial = middleName.substring(0, 1).toLowerCase();
+
         
         System.out.println("Enter your third name: ");
         lastName = input.next();
-        thirdInitial = lastName.substring(0, 1);
-        thirdInitial = thirdInitial.toUpperCase();
+        thirdInitial = lastName.substring(0, 1).toLowerCase();
         input.close();
         System.out.println(firstInitial+thirdInitial+secondInitial);
 

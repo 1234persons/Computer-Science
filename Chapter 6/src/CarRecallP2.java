@@ -10,7 +10,7 @@ public class CarRecallP2 {
             
 	        
 
-            while(modelNumber != 0) {
+            do {
                 defective = false;
                 System.out.print("Please input your cars model number: ");
 	            modelNumber = input.nextInt();
@@ -24,7 +24,7 @@ public class CarRecallP2 {
 	                defective = true;
 	            case 780:
 	                defective = true;
-	        }
+	        } 
 
 	        if (modelNumber >= 189 && modelNumber <= 196) {
 	            defective = true;
@@ -35,7 +35,8 @@ public class CarRecallP2 {
 	        } else {
 	            System.out.println("No recalls for this vehicle.");
 	        }
-        }
+        } while(modelNumber != 0);
+		
         input.close();
     }
 }

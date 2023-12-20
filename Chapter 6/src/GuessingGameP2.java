@@ -5,13 +5,13 @@ public class GuessingGameP2 {
         Scanner input = new Scanner(System.in);
 		
 		 
-        int userNum = 0;
+        int userNum;
         double randomNum;
 
         randomNum = (20 - 1) * Math.random() + 1;
         randomNum = (int)randomNum;
      
-        while (userNum != randomNum) {
+        do {
     	 System.out.println("Enter a number between 1 and 20: ");
          userNum = input.nextInt();
          
@@ -20,7 +20,7 @@ public class GuessingGameP2 {
          } else {
         	 System.out.print("You Win");
          }
-     }
+        } while (userNum != randomNum);
      input.close();
     }
 }
