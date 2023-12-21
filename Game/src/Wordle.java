@@ -17,12 +17,16 @@ public class Wordle {
         String tempUserWord = "";
         String tempSecretWord = secretWord;
         String correct = secretWord;
+        String usedChars = "";
+        char userChar;
+        char secretChar;
 
         String RESET = "\u001B[0m";
         String RED = "\u001B[31m";
         String GREEN = "\u001B[32m";
         String YELLOW = "\u001B[33m";
 
+        boolean win = false;
         int guesses = 1;
 
         System.out.println("You will have five attempts to guess a random five letter word.");
@@ -40,48 +44,35 @@ public class Wordle {
                 System.out.println("Enter a five letter word: ");
                 userWord = input.next().toUpperCase();
                 tempUserWord = "";
-
             } while (userWord.length() != 5);
 
             // Checks if guess is correct
             if (userWord.equals(correct)) {
-                System.out.println("You win!");
+                win = true;
                 break;
             }
 
-            char userChar;
-            char secretChar;
             
+            tempSecretWord = secretWord;
+            
+
             //iterates through users word
             for (int userIndex = 0; userIndex < secretWord.length(); userIndex++) {
 
                 userChar = userWord.charAt(userIndex);
-                tempSecretWord = secretWord;
+                usedChars = "";
                 
-                //Letter not in word
-                for (int secretIndex = 0; secretIndex < secretWord.length(); secretIndex++) {
-                    secretChar = tempSecretWord.charAt(secretIndex);
-
-                    if (userChar == '-' || userChar == '`') {
-                        break;
-                    }
-                    if (tempSecretWord.contains(String.valueOf(userChar)) == false) {
-                        tempUserWord += RED + userChar + RESET;
-                        break;
-                    }
-                }
+                
                 
                 //Letter in word and right place
                 for (int secretIndex = 0; secretIndex < secretWord.length(); secretIndex++) {
                     
                     secretChar = tempSecretWord.charAt(secretIndex);
-                    if (userChar == '-' || userChar == '`') {
-                        break;
-                    }
+            
                     if (userChar == secretChar && userIndex == secretIndex) {
                         tempUserWord += GREEN + userChar + RESET;
                         tempSecretWord = tempSecretWord.replace(userChar, '`');
-                        
+                        usedChars += userChar;
                     }
                 }
                 
@@ -89,17 +80,36 @@ public class Wordle {
                 //Letter in word and in wrong place
                 for (int secretIndex = 0; secretIndex < secretWord.length(); secretIndex++) {
                     secretChar = tempSecretWord.charAt(secretIndex);
-                    if (userChar == '-' || userChar == '`') {
-                        break;
-                    }
                     
                     if (tempSecretWord.contains(String.valueOf(userChar)) && secretIndex != userIndex) {                      
                         tempUserWord += YELLOW + userChar + RESET;
                         tempSecretWord = tempSecretWord.replace(userChar, '-');
+                        usedChars += userChar;
                         //tempUserWord = tempUserWord.replace(userChar, '-');
                         //userChar = '-';
                         break;
                     }
+                    
+                }
+
+                //Letter not in word
+                for (int secretIndex = 0; secretIndex < secretWord.length(); secretIndex++) {
+                    secretChar = tempSecretWord.charAt(secretIndex);
+                    
+                     if (tempSecretWord.charAt(userIndex) != '-' || tempSecretWord.charAt(userIndex) != '`') {
+                        if (!tempSecretWord.contains(String.valueOf(userChar))) {
+                            if (!usedChars.contains(String.valueOf(userChar))) {
+                                tempUserWord += RED + userChar + RESET;
+                                break; 
+                            }
+                            
+                        }
+                        
+                    }
+                    // if (!tempSecretWord.contains(String.valueOf(userChar))) {
+                    //     tempUserWord += RED + userChar + RESET;
+                    //     break;
+                    // }
                     
                 }
 
@@ -110,9 +120,17 @@ public class Wordle {
             
             //System.out.println(tempSecretWord);
             System.out.println(tempUserWord);
+            guesses += 1;
 
         } while (guesses <= 5);
         input.close();
+
+        if (win) {
+            System.out.println("You Win!");
+        } else {
+            System.out.println("Guess better :(");
+        }
+
     }
 }
 
