@@ -99,6 +99,7 @@ public class Wordle {
                      if (tempSecretWord.charAt(userIndex) != '-' || tempSecretWord.charAt(userIndex) != '`') {
                         if (!tempSecretWord.contains(String.valueOf(userChar))) {
                             if (!usedChars.contains(String.valueOf(userChar))) {
+
                                 tempUserWord += RED + userChar + RESET;
                                 break; 
                             }
