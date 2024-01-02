@@ -45,12 +45,15 @@ public class DisplayBox {
         String userUnit;
         
         System.out.println("Do you want to enter a specific unit to make the box out of? Enter y for yes and n for no: ");
-        userChoice = input.next();
+        userChoice = input.next().toLowerCase();
 
         if (userChoice.equals("y") == true) {
+            
+            do {
             System.out.println("Enter the unit of your choice: ");
             userUnit = input.next();
-
+            } while (userUnit.length() != 1);
+            
             drawBar(width, length, userUnit);
         } else {
             drawBar(width, length);
@@ -64,13 +67,15 @@ public class DisplayBox {
         int userWidth;
         int userLength;
 
-
+        do {
         System.out.println("Enter the width of the box: ");
         userWidth = input.nextInt();
-        
+        } while (userWidth <= 0);
 
+        do {
         System.out.println("Enter the length of the box: ");
         userLength = input.nextInt();
+        } while (userLength <= 0);
 
         drawBox(userWidth, userLength); 
                 input.close();       

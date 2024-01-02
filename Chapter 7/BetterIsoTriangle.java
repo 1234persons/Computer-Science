@@ -6,8 +6,10 @@ public class BetterIsoTriangle {
 
         double lineNum;
 
+        do {
         System.out.println("Enter the number of lines you would like: ");
         lineNum = input.nextInt();
+        } while (lineNum <= 0);
         drawBar(lineNum);
         input.close();
     }
