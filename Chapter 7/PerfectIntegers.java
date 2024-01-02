@@ -13,7 +13,7 @@ public class PerfectIntegers {
     }
 
     public static boolean isPerfect(int num) {
-        boolean isPerfect = false;
+
         int factorSum = 0;
         for (int i = 1; i <= num; i++) {
             

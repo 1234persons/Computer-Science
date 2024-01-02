@@ -7,15 +7,12 @@ public class HiLo {
 
         Random rand = new Random();
         int userGuess;
-        final int HIGH = 1;
-        final int LOW = 0;
-        int computerNumber = rand.nextInt(1, 13);
+        int computerNumber;
         int points = 1000;
         int riskPoints;
 
         boolean low = false;
         boolean high = false;
-        boolean seven = false;
         boolean userHigh = false;
         boolean userLow = false;
         boolean win = false;
@@ -25,14 +22,12 @@ public class HiLo {
 
         do {
         
-        computerNumber = rand.nextInt(1, 13);
+        computerNumber = rand.nextInt(13 - 1) + 1;
 
         if (computerNumber < 7) {
             low = true;
         } else if (computerNumber > 7) {
             high = true;
-        } else {
-            seven = true;
         }
 
         System.out.println("RULES");
@@ -81,6 +76,6 @@ public class HiLo {
         userChoice = input.next().toLowerCase();
 
     } while (!userChoice.equals("n"));
-        
+        input.close();
     }
 }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Nim {
     public static void main(String[] args) {
         Random rand = new Random();
-        int rocks = rand.nextInt(15, 30);
+        int rocks = rand.nextInt(30 - 15) + 15;
 
         System.out.println("RULES");
         System.out.println("You and the computer can each take 1 to 3 rocks per turn");
@@ -62,7 +62,7 @@ public class Nim {
         if (rocks == 0) {
             playerLose();
         }
-
+        input.close();
         return (rocks);
 
     }
