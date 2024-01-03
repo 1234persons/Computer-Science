@@ -7,8 +7,11 @@ public class OddSum {
         int userNum;
         int sum = 0;
 
+        do {
         System.out.println("Enter a number: ");
         userNum = input.nextInt();
+        } while (userNum < 0);
+        
         input.close();
 
         for (int i = 1; i <= userNum; i++ ) {
