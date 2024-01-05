@@ -8,9 +8,11 @@ public class PrimeNumbers {
 
         int userNum;
         boolean prime = true;
-      
+        
+        do {
         System.out.print("Enter a number: ");
         userNum = input.nextInt();
+        } while (userNum < 0);
         input.close();
         
         for (int i = 2; i <= userNum / 2; i++) {
@@ -20,10 +22,10 @@ public class PrimeNumbers {
             }
         }
             
-        if (prime == false) {
-        System.out.println("Your number is not prime");
-        } else {
+        if (prime) {
         System.out.println("Your number is prime");
+        } else {
+        System.out.println("Your number is not prime");
         }
         
     }

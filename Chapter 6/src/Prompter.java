@@ -20,6 +20,7 @@ public class Prompter {
             userNum = input.nextInt();
         } while (userNum > max || userNum < min);
 
+        input.close();
 
     }
 }
