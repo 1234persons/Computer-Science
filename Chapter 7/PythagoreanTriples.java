@@ -8,6 +8,12 @@ public class PythagoreanTriples {
                 for (int b = 1; b <= 100; b++) {
 
                     //if (perfectSquare(b)) {
+                        // int c = Math.pow(a, 2) + Math.pow(b, 2);
+                        // boolean cPerfect = perfectSquare(c);
+
+                        // if (Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2) && a < b && coPrime(a, b)) {
+                        //         System.out.println(a + ", " + b + ", " + c);
+                        //     }
 
                         for (int c = 1; c <= 100; c++) {
 
@@ -27,22 +33,22 @@ public class PythagoreanTriples {
 
     }
 
-    // public static boolean perfectSquare(double num) {
-    //     double originalNumber = num;
-    //     double square;
-    //     originalNumber = num;
+    public static boolean perfectSquare(double num) {
+        double originalNumber = num;
+        double square;
+        originalNumber = num;
 
-    //     square = Math.sqrt(num);
-    //     square = (double) square;
-    //     square = Math.pow((int) square, 2);
+        square = Math.sqrt(num);
+        square = (double) square;
+        square = Math.pow((int) square, 2);
 
-    //     if (square == originalNumber) {
-    //         return (true);
-    //     } else {
-    //         return (false);
-    //     }
+        if (square == originalNumber) {
+            return (true);
+        } else {
+            return (false);
+        }
 
-    // }
+    }
 
     public static boolean coPrime(int m, int n) {
 
