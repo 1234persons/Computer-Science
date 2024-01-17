@@ -24,6 +24,7 @@ public class PrimeNumbersPart3 {
         }
 
         for (int j = userMin; j <= userMax; j++) {
+            
             prime = isPrime(j);
 
             if (prime) {
@@ -37,8 +38,8 @@ public class PrimeNumbersPart3 {
 
         boolean prime = true;
 
-        for (int i = 2; i <= userNum / 2; i++) {
-            if (userNum%i == 0 ) {
+        for (int i = 2; i <= currentNum / 2; i++) {
+            if (currentNum%i == 0 ) {
                 prime = false;
                 break;
             }
