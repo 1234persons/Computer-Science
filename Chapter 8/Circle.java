@@ -15,15 +15,15 @@ public class Circle {
         System.out.println("The circumference is " + number.format(spot.circumference()));
     }
     
-    public Circle() {
+    public Circle() { // Constructor
         radius = 1;
     }
 
-    public void setRadius(double newRadius) {
+    public void setRadius(double newRadius) { // Accessor Method
         radius = newRadius;
     }
 
-    public double circumference() {
+    public double circumference() { // Mutator
         double circumference = 2 * PI * radius;
 
         return(circumference);

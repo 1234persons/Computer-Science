@@ -43,23 +43,21 @@ public class RockPaperScissorsP1 {
         } else if (userNumber == Rock && computerNumber2 == Scissors) {
             System.out.println("You Win");
         }
-        
-            if (userNumber == Rock && computerNumber2 == Paper) {
+
+        if (userNumber == Rock && computerNumber2 == Paper) {
+            System.out.println("CPU Win");
+        } else {
+            if (userNumber == Paper && computerNumber2 == Scissors) {
                 System.out.println("CPU Win");
             } else {
-                if (userNumber == Paper && computerNumber2 == Scissors) {
+                if (userNumber == Scissors && computerNumber2 == Rock) {
                     System.out.println("CPU Win");
-                } else {
-                    if (userNumber == Scissors && computerNumber2 == Rock) {
-                        System.out.println("CPU Win");
-                    }
                 }
             }
+        }
 
-            if (userNumber == computerNumber2) {
-                System.out.println("it's a tie");
-            }
-
+        if (userNumber == computerNumber2) {
+            System.out.println("it's a tie");
         }
 
     }

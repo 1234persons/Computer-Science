@@ -44,7 +44,7 @@ public class AccountSetupPart2 {
                 }
             }
 
-            if (hasUpper && hasLower && hasSymbol && passwordLength >= 8) {
+            if (hasUpper && hasLower && hasSymbol && hasNumber && passwordLength >= 8) {
                 break;
             }
         }
