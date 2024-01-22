@@ -3,20 +3,19 @@ import java.util.Random;
 public class CoinMethods {
     
     private Random rand = new Random();
-    private int face;
+    private int faceUp;
 
-    public CoinMethods() {
-
+    public CoinMethods() { // constructor
+       flipCoin();
     }
 
-    public void showFace() {
-
+    public int showFace() { // accessor
+        return (faceUp);
     }
 
-    public double flipCoin() {
-        face = rand.nextInt(1);
+    public void flipCoin() { // mutator
+        faceUp = rand.nextInt(2);
 
-        return(face);
     }
 }
 
