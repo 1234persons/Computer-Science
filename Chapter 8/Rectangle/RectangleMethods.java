@@ -1,4 +1,5 @@
 package Rectangle;
+
 public class Rectangle {
     
     private double width;
