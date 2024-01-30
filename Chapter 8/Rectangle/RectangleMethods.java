@@ -1,7 +1,7 @@
 package Rectangle;
 
 public class Rectangle {
-    
+
     private double width;
     private double length;
 
@@ -15,17 +15,46 @@ public class Rectangle {
         length = newLength;
     }
 
+    public double getLength() {
+        return(length);
+    }
+
+    public double getWidth() {
+        return(width);
+    }
+
     public double area() {
-        return(length * width);
+        return (length * width);
     }
 
     public double perimeter() {
-        return(2 * length + 2 * width);
+        return (2 * length + 2 * width);
     }
 
     public static void displayAreaFormula() {
         System.out.println("The formula for the area of a rectangle is Width * Length");
     }
 
-}
+    public String toString() {
+        String rectangleString;
 
+        rectangleString = "This rectangle has a length of " + length + " and a width of " + width;
+
+        return (rectangleString);
+    }
+
+    public boolean equals(Object R) {
+
+        Rectangle testObj = (Rectangle)R;
+
+        if (testObj.getLength() == length && testObj.getWidth() == width) {
+            return(true);
+        } else {
+            return(false);
+        }
+
+
+
+    }
+
+}
