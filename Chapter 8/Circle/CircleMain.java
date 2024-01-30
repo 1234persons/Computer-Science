@@ -11,6 +11,15 @@ public class CircleMain {
 
         NumberFormat number = NumberFormat.getNumberInstance();
 
+        if (spot.equals(spotP2)) {
+            System.out.println("Objects are equal");
+        } else {
+            System.out.println("Objects are not equal");
+        }
+
+        System.out.println(spot);
+        System.out.println(spotP2);
+
         spot.setRadius(10);
 
         System.out.println("The radius is " + spot.getRadius());
