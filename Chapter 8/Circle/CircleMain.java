@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class CircleMain {
     public static void main(String[] args) {
-
+        
         Circle spot = new Circle();
         Circle spotP2 = new Circle(5);
 

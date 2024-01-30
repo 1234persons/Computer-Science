@@ -30,12 +30,12 @@ public class CarRecallP2 {
 	            defective = true;
 	        }
 
-	        if (defective == true) {
+	        if (defective == true && modelNumber != -1) {
 	            System.out.println("Your car has been recalled.");
-	        } else {
+	        } else if (modelNumber != -1) {
 	            System.out.println("No recalls for this vehicle.");
 	        }
-        } while(modelNumber != 0);
+        } while(modelNumber != -1);
 		
         input.close();
     }
