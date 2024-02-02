@@ -19,5 +19,6 @@ public class CodingChallenge1 {
             }
 
         }
+        input.close();
     }
 }
