@@ -5,46 +5,72 @@ public class ElapsedTimeCalculator {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        final String MORNING = "am";
-        final String NIGHT = "pm";
-
         int startingTime;
         String userDay;
         int elapsedTime;
         int endingTime;
+        int tempEndingTime;
+        boolean day = false;
+        boolean night = false;
 
-        System.out.println("Enter the starting hour: ");
-        startingTime = input.nextInt();
+        do {
+            System.out.println("Enter the starting hour: ");
+            startingTime = input.nextInt();
+        } while (startingTime < 1);
 
-        System.out.println("Enter whether it's am or pm:");
-        userDay = input.next();
+        do {
+            System.out.println("Enter whether it's am or pm:");
+            userDay = input.next();
 
-        System.out.println("Enter the number of elapsed hours: ");
-        elapsedTime = input.nextInt();
+        } while (!userDay.equals("am") && !userDay.equals("pm"));
+
+        if (userDay.equalsIgnoreCase("am")) {
+            day = true;
+        } else {
+            night = true;
+        }
+        do {
+            System.out.println("Enter the number of elapsed hours: ");
+            elapsedTime = input.nextInt();
+        } while (elapsedTime < 1);
         input.close();
 
         endingTime = startingTime + elapsedTime;
+        tempEndingTime = endingTime;
+
+
+
+        endingTime %= 12;
+
+        if (endingTime == 0) {
+            endingTime = 12;
+        }
 
         if (endingTime < 12) {
-            
-            System.out.println(endingTime + ":00 " + userDay);
 
-        } else if (endingTime >= 12) {
-          
-            endingTime = endingTime%12 ;
-            
-            if (endingTime == 0) { 
-                endingTime = 12;
-            } 
+            System.out.println("The ending time is: " + endingTime + ":00 " + userDay);
 
-            if (userDay.compareToIgnoreCase(MORNING) == 0) { 
-                userDay = NIGHT;
-            } else if (userDay.compareToIgnoreCase(NIGHT) == 0) {
-                userDay = MORNING;
+        } else if (endingTime > 12) {
+
+            if (day) {
+                userDay = "pm";
+            } else {
+                userDay = "am";
             }
 
-            System.out.println("The time is: " + endingTime + ":00 " + userDay);
+            System.out.println("The ending time is: " + endingTime + ":00 " + userDay);
+
+        } else if (endingTime == 12) {
+
+            if (day) {
+                userDay = "pm";
+            } else {
+                userDay = "am";
+            }
+
+            System.out.println("The ending time is: " + endingTime + ":00 " + userDay);
         }
 
     }
+
 }
