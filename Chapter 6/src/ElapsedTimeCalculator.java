@@ -38,8 +38,6 @@ public class ElapsedTimeCalculator {
         endingTime = startingTime + elapsedTime;
         tempEndingTime = endingTime;
 
-
-
         endingTime %= 12;
 
         if (endingTime == 0) {
@@ -50,17 +48,7 @@ public class ElapsedTimeCalculator {
 
             System.out.println("The ending time is: " + endingTime + ":00 " + userDay);
 
-        } else if (endingTime > 12) {
-
-            if (day) {
-                userDay = "pm";
-            } else {
-                userDay = "am";
-            }
-
-            System.out.println("The ending time is: " + endingTime + ":00 " + userDay);
-
-        } else if (endingTime == 12) {
+        } else if (endingTime >= 12) {
 
             if (day) {
                 userDay = "pm";
@@ -72,5 +60,4 @@ public class ElapsedTimeCalculator {
         }
 
     }
-
 }
