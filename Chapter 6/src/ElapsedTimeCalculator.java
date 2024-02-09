@@ -1,62 +1,60 @@
 import java.util.Scanner;
-import java.lang.String;
 
 public class ElapsedTimeCalculator {
+
     public static void main(String[] args) {
+
+        int hour;
+        int time;
+        int total;
+        String day;
+        boolean afternoon = false;
+
         Scanner input = new Scanner(System.in);
 
-        int startingTime;
-        String userDay;
-        int elapsedTime;
-        int endingTime;
-        int tempEndingTime;
-        boolean day = false;
-        boolean night = false;
-
         do {
+            afternoon = false;
             System.out.println("Enter the starting hour: ");
-            startingTime = input.nextInt();
-        } while (startingTime < 1);
+            hour = input.nextInt();
+        } while (hour < 0 || hour > 12);
 
         do {
-            System.out.println("Enter whether it's am or pm:");
-            userDay = input.next();
+            System.out.println("Enter am or pm: ");
+            day = input.next();
+            if (day.equals("pm")) {
+                afternoon = true;
+            }
+        } while (!day.equals("am") && !day.equals("pm"));
 
-        } while (!userDay.equals("am") && !userDay.equals("pm"));
-
-        if (userDay.equalsIgnoreCase("am")) {
-            day = true;
-        } else {
-            night = true;
-        }
         do {
             System.out.println("Enter the number of elapsed hours: ");
-            elapsedTime = input.nextInt();
-        } while (elapsedTime < 1);
+            time = input.nextInt();
+        } while (time < 0);
+
         input.close();
 
-        endingTime = startingTime + elapsedTime;
-        tempEndingTime = endingTime;
+        total = hour + time;
 
-        endingTime %= 12;
-
-        if (endingTime == 0) {
-            endingTime = 12;
-        }
-
-        if (endingTime < 12) {
-
-            System.out.println("The ending time is: " + endingTime + ":00 " + userDay);
-
-        } else if (endingTime >= 12) {
-
-            if (day) {
-                userDay = "pm";
-            } else {
-                userDay = "am";
+        while (total >= 11) {
+            if (afternoon == true) {
+                afternoon = false;
+                day.equals("am");
+            } else if (afternoon == false) {
+                afternoon = true;
+                day.equals("pm");
             }
 
-            System.out.println("The ending time is: " + endingTime + ":00 " + userDay);
+            total = total - 12;
+        }
+
+        if (total == 0) {
+            total = 12;
+         } 
+
+        if (afternoon == false) {
+            System.out.println("The current time is: " + total + ":00 am");
+        } else if (afternoon == true) {
+            System.out.println("The current time is: " + total + ":00 pm");
         }
 
     }
