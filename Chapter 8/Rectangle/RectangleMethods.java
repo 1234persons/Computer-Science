@@ -1,6 +1,6 @@
 package Rectangle;
 
-public class Rectangle {
+public class RectangleMethods {
 
     private double width;
     private double length;
