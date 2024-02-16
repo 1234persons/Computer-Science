@@ -19,9 +19,9 @@ public class BetterIsoTriangle {
         int unitNum = 1;
         String unit = "*";
 
-        for (int i = 1; i <= lineNum; i ++) { //determines how many stars
+        for (int i = 1; i <= lineNum; i ++) {
             addSpaces(lineNum, i); 
-            for (int j = 1; j <= unitNum; j++) { //prints the stars
+            for (int j = 1; j <= unitNum; j++) {
                 System.out.print(unit); 
             }
             unitNum += 2;

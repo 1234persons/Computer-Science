@@ -127,6 +127,7 @@ public class Wordle {
         input.close();
 
         if (win) {
+            System.out.println(GREEN + userWord + RESET);
             System.out.println("You Win!");
         } else {
             System.out.println("Guess better :(");
