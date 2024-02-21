@@ -13,7 +13,7 @@ public class RandomWalk {
         for (int trials = 0; trials < 50; trials++) {
             stepCount = 0;
             startingPoint = 0;
-            while (Math.abs(startingPoint) != 7) {
+            while (Math.abs(startingPoint) != 4) {
                 
                 randomStep = (10-(-10)) * Math.random() + -10;
                 stepCount += 1;
