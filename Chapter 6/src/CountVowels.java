@@ -9,7 +9,7 @@ public class CountVowels {
         int vowelCount = 0;
         int indexMax = 1;
         System.out.println("Enter a string: ");
-        userString = input.next(); 
+        userString = input.nextLine(); 
         input.close();
         for (int index = 0; index < userString.length(); index++) {
             letter = userString.substring(index, indexMax);

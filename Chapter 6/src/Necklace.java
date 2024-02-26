@@ -23,12 +23,13 @@ public class Necklace {
 
         lastDigit = firstNum;
         currentDigit = secondNum;
-        System.out.print(firstNum + ", " + secondNum + ", ");
+        System.out.print(firstNum + " " + secondNum + " ");
         do {
             nextDigit = (lastDigit + currentDigit)%10;
             lastDigit = currentDigit;
             currentDigit = nextDigit;
-            System.out.print(nextDigit + ", ");
-        } while (lastDigit != firstNum && currentDigit != secondNum);
+            System.out.print(nextDigit + " ");
+        } while (currentDigit != firstNum && nextDigit != secondNum);
+
     }
 }
