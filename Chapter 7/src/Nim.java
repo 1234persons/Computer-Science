@@ -34,7 +34,7 @@ public class Nim {
         boolean validGuess = false;
 
         do {
-            computerNum = rand.nextInt(1, 3);
+            computerNum = (3 - 1) * rand.nextInt() + 1;
             validGuess = isValidEntry(computerNum, rocks);
         } while (!validGuess);
 

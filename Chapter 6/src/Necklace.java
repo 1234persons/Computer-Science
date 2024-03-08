@@ -7,9 +7,11 @@ public class Necklace {
         int firstNum;
         int secondNum;
 
-        int lastDigit;
-        int currentDigit;
-        int nextDigit;
+        int firstDigit;
+        int secondDigit;
+        int thirdDigit;
+        int counter = 0;
+
 
         do {
             System.out.println("Enter your first number: ");
@@ -21,15 +23,18 @@ public class Necklace {
             secondNum = input.nextInt();
         } while (secondNum < 1);
 
-        lastDigit = firstNum;
-        currentDigit = secondNum;
+        firstDigit = firstNum;
+        secondDigit = secondNum;
         System.out.print(firstNum + " " + secondNum + " ");
-        do {
-            nextDigit = (lastDigit + currentDigit)%10;
-            lastDigit = currentDigit;
-            currentDigit = nextDigit;
-            System.out.print(nextDigit + " ");
-        } while (currentDigit != firstNum && nextDigit != secondNum);
 
+        do {
+            thirdDigit = (firstDigit + secondDigit)%10;
+            firstDigit = secondDigit;
+            secondDigit = thirdDigit;
+            System.out.print(secondDigit + " ");
+            counter++;
+        } while (firstDigit != firstNum || secondDigit != secondNum);
+        input.close();
+        System.out.println("It took " + counter + " iterations to close the necklace.");
     }
 }

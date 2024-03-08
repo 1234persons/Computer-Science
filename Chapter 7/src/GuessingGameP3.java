@@ -9,7 +9,7 @@ public class GuessingGameP3 {
         int userNum;
         int randomNum;
 
-        randomNum = rand.nextInt(1, 20);
+        randomNum = rand.nextInt();
         System.out.println(randomNum);
         do {
     	 System.out.println("Enter a number between 1 and 20: ");
