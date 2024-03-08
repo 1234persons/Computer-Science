@@ -5,12 +5,12 @@ public class RectangleMethods {
     private double width;
     private double length;
 
-    public Rectangle() {
+    public RectangleMethods() {
         width = 1;
         length = 1;
     }
 
-    public Rectangle(double newWidth, double newLength) {
+    public RectangleMethods(double newWidth, double newLength) {
         width = newWidth;
         length = newLength;
     }
@@ -45,7 +45,7 @@ public class RectangleMethods {
 
     public boolean equals(Object R) {
 
-        Rectangle testObj = (Rectangle)R;
+        RectangleMethods testObj = (RectangleMethods)R;
 
         if (testObj.getLength() == length && testObj.getWidth() == width) {
             return(true);

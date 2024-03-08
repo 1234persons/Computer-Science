@@ -3,8 +3,8 @@ package Rectangle;
 public class RectangleMain {
     public static void main(String[] args) {
 
-        Rectangle rect = new Rectangle();
-        Rectangle rect2 = new Rectangle(5, 2);
+        RectangleMethods rect = new RectangleMethods();
+        RectangleMethods rect2 = new RectangleMethods(5, 2);
 
         if (rect.equals(rect2)) {
             System.out.println("Objects are equal");
@@ -21,7 +21,7 @@ public class RectangleMain {
         System.out.println("The area of rectangle two is: " + rect2.area());
         System.out.println("The perimeter of rectangle two is: " + rect2.perimeter() + "\n");
 
-        Rectangle.displayAreaFormula();
+        RectangleMethods.displayAreaFormula();
 
     }
 }

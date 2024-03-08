@@ -52,7 +52,7 @@ public class TimeConverter {
     }
 
     public static void main(String[] args) {
-       Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         int userChoice;
         System.out.println("1. Hours to minutes");
         System.out.println("2. Minutes to hours");

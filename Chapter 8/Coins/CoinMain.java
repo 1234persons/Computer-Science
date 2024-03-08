@@ -1,3 +1,5 @@
+package Coins;
+
 public class CoinMain {
 
     public static void main(String[] args) {
