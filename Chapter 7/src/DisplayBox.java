@@ -47,7 +47,7 @@ public class DisplayBox {
         System.out.println("Do you want to enter a specific unit to make the box out of? Enter y for yes and n for no: ");
         userChoice = input.next().toLowerCase();
 
-        if (userChoice.equals("y") == true) {
+        if (userChoice.equals("y")) {
             
             do {
             System.out.println("Enter the unit of your choice: ");
