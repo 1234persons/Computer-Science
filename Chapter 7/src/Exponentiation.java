@@ -4,7 +4,7 @@ public class Exponentiation {
 
     public static double powerOf(double num, double exponent) {
        double originalNum = num;
-        for (int i = 1; i <= exponent - 1; i++) {
+        for (int i = 1; i < exponent; i++) {
             num = num * originalNum;
         }
         return(num);

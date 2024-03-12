@@ -1,6 +1,6 @@
 {
     "java.debug.settings.onBuildFailureProceed": true,
     "java.project.sourcePaths": [
-        "Chapter 8"
+        "Coding Challenge"
     ]
 }
