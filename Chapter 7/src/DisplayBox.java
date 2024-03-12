@@ -44,8 +44,10 @@ public class DisplayBox {
         String userChoice;
         String userUnit;
         
+        do {
         System.out.println("Do you want to enter a specific unit to make the box out of? Enter y for yes and n for no: ");
-        userChoice = input.next().toLowerCase();
+        userChoice = input.nextLine().toLowerCase();
+        } while (!"y".equals(userChoice) && !"n".equals(userChoice));
 
         if (userChoice.equals("y")) {
             
@@ -78,6 +80,6 @@ public class DisplayBox {
         } while (userLength <= 0);
 
         drawBox(userWidth, userLength); 
-                input.close();       
+        input.close();       
     }
 }
