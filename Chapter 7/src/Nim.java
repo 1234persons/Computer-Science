@@ -2,6 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Nim {
+    public static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         Random rand = new Random();
         int rocks = rand.nextInt(30 - 15) + 15;
@@ -14,7 +15,7 @@ public class Nim {
             rocks = playerMove(rocks);
             rocks = computerMove(rocks);
         } while (rocks > 0);
-
+        input.close();
     }
 
     public static boolean isValidEntry(int guess, int rocks) {
@@ -62,7 +63,7 @@ public class Nim {
         if (rocks == 0) {
             playerLose();
         }
-        input.close();
+        
         return (rocks);
 
     }
@@ -71,7 +72,7 @@ public class Nim {
 
         int computerGuess = drawStones(rocks);
 
-        System.out.println("There are " + rocks + " stones." + "The computer takes " + computerGuess + " rocks.\n");
+        System.out.println("There are " + rocks + " stones. " + "The computer takes " + computerGuess + " rocks.\n");
         rocks -= computerGuess;
 
         if (rocks == 0) {
