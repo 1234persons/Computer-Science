@@ -43,7 +43,7 @@ public class Nim {
     }
 
     public static int playerMove(int rocks) {
-        Scanner input = new Scanner(System.in);
+
 
         int userGuess;
         boolean validGuess = false;
@@ -59,11 +59,10 @@ public class Nim {
         System.out.println();
 
         rocks -= userGuess;
-
+        
         if (rocks == 0) {
             playerLose();
         }
-        
         return (rocks);
 
     }
@@ -83,10 +82,10 @@ public class Nim {
 
     public static void playerLose() {
         System.out.println("The computer wins!");
+
     }
 
     public static void computerLose() {
         System.out.println("The player wins!");
     }
-
 }
