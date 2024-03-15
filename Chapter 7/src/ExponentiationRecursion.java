@@ -1,16 +1,14 @@
 import java.util.Scanner;
 
-public class Exponentiation {
+public class ExponentiationRecursion {
 
     public static int powerOf(int num, int exponent) {
-       int originalNum = num;
-        for (int i = 1; i < exponent; i++) {
-            num = num * originalNum;
-        }
-        return(num);
+        if (exponent == 1) return(num);
+        return (num * powerOf(num, exponent - 1));
     }
+
     public static void main(String[] args) {
-       Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         int userNumOne;
         int userNumTwo;
         int product;
@@ -26,4 +24,3 @@ public class Exponentiation {
         System.out.println(product);
     }
 }
-
