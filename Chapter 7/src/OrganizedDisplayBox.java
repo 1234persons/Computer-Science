@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class DisplayBox {
+public class OrganizedDisplayBox {
     public static void drawBar(int width, int length) {
         String side = "*";
 
@@ -40,26 +40,18 @@ public class DisplayBox {
     }
 
     public static void drawBox(int width, int length) {
-        Scanner input = new Scanner(System.in);
-        String userChoice;
-        String userUnit;
-        
-        do {
-        System.out.println("Do you want to enter a specific unit to make the box out of? Enter y for yes and n for no: ");
-        userChoice = input.nextLine().toLowerCase();
-        } while (!"y".equals(userChoice) && !"n".equals(userChoice));
+        drawBar(width, length);
+    }
 
-        if (userChoice.equals("y")) {
-            
-            do {
-            System.out.println("Enter the unit of your choice: ");
-            userUnit = input.next();
-            } while (userUnit.length() != 1);
-            
-            drawBar(width, length, userUnit);
-        } else {
-            drawBar(width, length);
-        }
+    public static void drawBox(int width, int length, String userChoice) {
+        Scanner input = new Scanner(System.in);
+
+        String character;
+
+        System.out.println("Enter the character you would like to use: ");
+        character = input.next();
+
+        drawBar(width, length, character);
         input.close();
     }
 
@@ -68,6 +60,7 @@ public class DisplayBox {
 
         int userWidth;
         int userLength;
+        String userChoice;
 
         do {
         System.out.println("Enter the width of the box: ");
@@ -78,10 +71,18 @@ public class DisplayBox {
         System.out.println("Enter the length of the box: ");
         userLength = input.nextInt();
         } while (userLength <= 0);
-
         
+        do {
+        System.out.println("Do you want to enter a specific unit to make the box out of? Enter y for yes and n for no: ");
+        userChoice = input.next().toLowerCase();
+        } while (!"y".equals(userChoice) && !"n".equals(userChoice));
 
-        drawBox(userWidth, userLength); 
+        if (userChoice.equals("y")) {
+            drawBox(userWidth, userLength, userChoice);
+        } else {
+            drawBox(userWidth, userLength);
+        }
+
         input.close();       
     }
 }
