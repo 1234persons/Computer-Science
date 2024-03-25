@@ -16,6 +16,7 @@ public class BetterIsoTriangle {
         input.close();
     }
 
+    // Calls the addspaces method and prints the number of astrisks corresponding to the line number
     public static void drawBar(int lineNum) {
         int counter = 1;
         for (int i = 1; i <= lineNum; i++) {
@@ -28,6 +29,7 @@ public class BetterIsoTriangle {
         }
     }
 
+    // Prints the number of spaces based off the line number
     public static void addSpaces(int lineNum, int i) {
 
         for (int j = i - 1; j <= lineNum; j++) {
