@@ -4,46 +4,35 @@ public class BetterIsoTriangle {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        double lineNum;
+        int lineNum;
 
         do {
-        System.out.println("Enter the number of lines you would like: ");
-        lineNum = input.nextInt();
+            System.out.println("Enter the number of lines you would like: ");
+            lineNum = input.nextInt();
         } while (lineNum <= 0);
+
         drawBar(lineNum);
+
         input.close();
     }
 
-    public static void drawBar(double lineNum) {
-
-        int unitNum = 1;
-        String unit = "*";
-
-        for (int i = 1; i <= lineNum; i ++) {
-            addSpaces(lineNum, i); 
-            for (int j = 1; j <= unitNum; j++) {
-                System.out.print(unit); 
+    public static void drawBar(int lineNum) {
+        int counter = 1;
+        for (int i = 1; i <= lineNum; i++) {
+            addSpaces(lineNum, i);
+            for (int j = 1; j <= counter; j++) {
+                System.out.print("*");
             }
-            unitNum += 2;
+            counter += 2;
             System.out.println();
         }
     }
-    public static void addSpaces(double lineNum, int i) {
-        int spaceNum;
-        String unit = " ";
-        lineNum = (lineNum + 2)/2;
-        spaceNum = (int)lineNum;
-        int counter = 1;
-        spaceNum += lineNum - 1;
-        
-        for (int j = i - 1; j <= spaceNum; j++) {
-                    spaceNum -= counter;
-                    for (int k = j; k<=spaceNum; k++) {
-                        System.out.print(unit);
-                        counter += 2;
-                    }
-                }
-                
-        }
-    }
 
+    public static void addSpaces(int lineNum, int i) {
+
+        for (int j = i - 1; j <= lineNum; j++) {
+            System.out.print(" ");
+        }
+
+    }
+}

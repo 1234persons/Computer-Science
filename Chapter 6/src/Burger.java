@@ -3,6 +3,8 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.BigInteger;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -30,6 +32,7 @@ public class Burger extends JButton {
         idk.add(heheheheheheclickything, CENTER);
         idk.add(wordythigny, CENTER);
         heheheheheheclickything.setPreferredSize(new Dimension(0, 0));
+    
         
         heheheheheheclickything.addActionListener(new ActionListener() {
 
@@ -38,10 +41,14 @@ public class Burger extends JButton {
                 double rand = (1920- 0) * Math.random() + 0;
                 double rand2 = (1080 - 0) * Math.random() + 0;
                 heheheheheheclickything.setLocation((int)rand, (int)rand2);;
-                county += 1;
-                wordythigny.setText("clicky count: " + county);
+                otheractionperformed(e);
                 //throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
             }
+            public void otheractionperformed(ActionEvent e) {
+                county += 1;
+                wordythigny.setText("clicky count: " + county);
+            }
+            
         });
     }
 
