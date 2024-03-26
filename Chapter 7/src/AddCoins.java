@@ -4,7 +4,6 @@ import java.text.NumberFormat;
 public class AddCoins {
 
     public static void main(String[] args) {
-        
 
         Scanner input = new Scanner(System.in);
 
@@ -39,7 +38,7 @@ public class AddCoins {
         nickels = (nickels / 100) * 5;
         pennies = pennies / 100;
         String dollarAmount = money.format(quarters + dimes + nickels + pennies);
-        return(dollarAmount);
+        return (dollarAmount);
 
     }
 }
