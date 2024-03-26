@@ -39,6 +39,6 @@ public class AddCoins {
         pennies = pennies / 100;
         String dollarAmount = money.format(quarters + dimes + nickels + pennies);
         return (dollarAmount);
-
+        
     }
 }
