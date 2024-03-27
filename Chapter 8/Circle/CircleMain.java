@@ -19,7 +19,7 @@ public class CircleMain {
 
         System.out.println(spot);
         System.out.println(spotP2);
-
+  
         spot.setRadius(10);
 
         System.out.println("The radius is " + spot.getRadius());
