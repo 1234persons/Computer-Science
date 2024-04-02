@@ -13,9 +13,9 @@ public class DreamVacation {
         cost = 1.0;
     }
 
-    public DreamVacation(String newDestination, double newCost) {
-        destination = newDestination;
-        cost = newCost;
+    public DreamVacation(String destination, double cost) {
+        this.destination = destination;
+        this.cost = cost;
     }
 
     public String getDestination() {
