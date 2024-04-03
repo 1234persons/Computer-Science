@@ -18,64 +18,59 @@ public class HiLo {
         boolean win = false;
         String userChoice;
 
-        
-
         do {
-        
-        computerNumber = rand.nextInt(13 - 1) + 1;
 
-        if (computerNumber < 7) {
-            low = true;
-        } else if (computerNumber > 7) {
-            high = true;
-        }
+            computerNumber = rand.nextInt(13 - 1) + 1;
 
-        System.out.println("RULES");
-        System.out.println("Numebrs 1 through 6 are low.");
-        System.out.println("Numbers 8 through 13 are high.");
-        System.out.println("7 is neither high or low.\n");
+            if (computerNumber < 7) {
+                low = true;
+            } else if (computerNumber > 7) {
+                high = true;
+            }
 
-        System.out.println("You have " + points + " points\n");
+            System.out.println("RULES");
+            System.out.println("Numebrs 1 through 6 are low.");
+            System.out.println("Numbers 8 through 13 are high.");
+            System.out.println("7 is neither high or low.\n");
 
-        do {
-        System.out.println("Enter points to risk: ");
-        riskPoints = input.nextInt();
-        } while (riskPoints > points);
+            System.out.println("You have " + points + " points\n");
 
+            do {
+                System.out.println("Enter points to risk: ");
+                riskPoints = input.nextInt();
+            } while (riskPoints > points);
 
+            do {
+                System.out.println("\nEnter high(1) or low(0): ");
+                userGuess = input.nextInt();
+            } while (userGuess != 1 && userGuess != 0);
 
-        do {
-        System.out.println("\nEnter high(1) or low(0): ");
-        userGuess = input.nextInt();
-        } while (userGuess != 1 && userGuess != 0);
+            if (userGuess == 1) {
+                userHigh = true;
+            } else {
+                userLow = true;
+            }
 
-        if (userGuess == 1) {
-            userHigh = true;
-        } else {
-            userLow = true;
-        }
-        
+            if (userHigh && high || userLow && low) {
+                win = true;
+                points += riskPoints * 2;
+            } else {
+                points -= riskPoints;
+            }
 
-        if (userHigh && high || userLow && low) {
-            win = true;
-            points += riskPoints * 2;
-        } else {
-            points -= riskPoints;
-        }
+            System.out.println("Number is " + computerNumber + ".");
 
-        System.out.println("Number is " + computerNumber + ".");
+            if (win) {
+                System.out.println("You win!!!");
+            } else {
+                System.out.println("You lose :(");
+            }
 
-        if (win) {
-            System.out.println("You win!!!");
-        } else {
-            System.out.println("You lose :(");
-        }
+            System.out.println("You have " + points + " points.");
+            System.out.println("Play again? (y for yes, n for no)");
+            userChoice = input.next().toLowerCase();
 
-        System.out.println("You have " + points + " points.");
-        System.out.println("Play again? (y for yes, n for no)");
-        userChoice = input.next().toLowerCase();
-
-    } while (!userChoice.equals("n"));
+        } while (!userChoice.equals("n"));
         input.close();
     }
 }

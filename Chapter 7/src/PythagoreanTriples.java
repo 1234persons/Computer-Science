@@ -5,7 +5,7 @@ public class PythagoreanTriples {
 
             //if (perfectSquare(a)) {
 
-                for (int b = 1; b <= 100; b++) {
+                for (int b = a; b <= 100; b++) {
 
                     //if (perfectSquare(b)) {
                         // int c = Math.pow(a, 2) + Math.pow(b, 2);

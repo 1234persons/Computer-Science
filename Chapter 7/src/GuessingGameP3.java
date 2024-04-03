@@ -7,9 +7,9 @@ public class GuessingGameP3 {
 		Random rand =  new Random();
 		 
         int userNum;
-        int randomNum;
+        int randomNum = rand.nextInt(20);
 
-        randomNum = rand.nextInt();
+       // randomNum = (int)((20 - 1) * rand.nextInt() + 1);
         System.out.println(randomNum);
         do {
     	 System.out.println("Enter a number between 1 and 20: ");

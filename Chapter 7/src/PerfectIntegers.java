@@ -1,11 +1,10 @@
 public class PerfectIntegers {
     public static void main(String[] args) {
         
-        boolean perfectInteger = false;
         for (int i = 1; i <= 100; i++) {
-            perfectInteger = isPerfect(i);
+           // perfectInteger = isPerfect(i);
 
-            if (perfectInteger) {
+            if (isPerfect(i)) {
                 System.out.println(i);
             }
         }
