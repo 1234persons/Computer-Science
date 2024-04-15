@@ -14,9 +14,7 @@ public class BetterPythagoreanTriples {
     }
 
     public static boolean perfectSquare(double num) {
-        double originalNumber = num;
         double square;
-        originalNumber = num;
 
         square = Math.sqrt(num);
         square = (double) square;

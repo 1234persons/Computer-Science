@@ -19,7 +19,11 @@ public class HiLo {
         String userChoice;
 
         do {
-
+            win = false;
+            low = false;
+            high = false;
+            userHigh = false;
+            userLow = false;
             computerNumber = rand.nextInt(13 - 1) + 1;
 
             if (computerNumber < 7) {
@@ -51,7 +55,7 @@ public class HiLo {
                 userLow = true;
             }
 
-            if (userHigh && high || userLow && low) {
+            if (userHigh && high || userLow && low && computerNumber != 7) {
                 win = true;
                 points += riskPoints * 2;
             } else {
