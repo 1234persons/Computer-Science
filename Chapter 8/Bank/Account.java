@@ -41,4 +41,11 @@ public class Account {
     return (accountString);
    } 
 
+   public void changeAddress(String street, String city, String state, String zip) {
+        cust.changeStreet(street);
+        cust.changeCity(city);
+        cust.changeState(state);
+        cust.changeZip(zip);
+   }
+
 }
