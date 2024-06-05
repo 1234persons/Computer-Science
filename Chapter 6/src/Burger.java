@@ -39,13 +39,10 @@ public class Burger extends JButton {
                 double rand = (1920- 0) * Math.random() + 0;
                 double rand2 = (1080 - 0) * Math.random() + 0;
                 heheheheheheclickything.setLocation((int)rand, (int)rand2);;
-                otheractionperformed(e);
+                
                 //throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
             }
-            public void otheractionperformed(ActionEvent e) {
-                county += 1;
-                wordythigny.setText("clicky count: " + county);
-            }
+            
             
         });
     }
