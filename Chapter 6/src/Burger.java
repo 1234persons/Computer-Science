@@ -40,7 +40,7 @@ public class Burger extends JButton {
                 double rand2 = (1080 - 0) * Math.random() + 0;
                 heheheheheheclickything.setLocation((int)rand, (int)rand2);;
                 
-                //throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+                throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
             }
             
             
